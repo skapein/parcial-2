@@ -5,4 +5,4 @@ export const MascotaSchema = new mongoose.Schema({
   //email: { type: String, required: true },
 });
 
-MascotaSchema.index({ email: 1 }, { unique: true });
+MascotaSchema.index({ name: 1 }, { unique: true });

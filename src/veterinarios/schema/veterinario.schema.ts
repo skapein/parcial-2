@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-export const PropietarioSchema = new mongoose.Schema(
+export const VeterinarioSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
     //email: { type: String, required: true },
@@ -12,6 +12,6 @@ export const PropietarioSchema = new mongoose.Schema(
   },
 );
 
-//PropietarioSchema.index({ email: 1 }, { unique: true });
+VeterinarioSchema.index({ nombre: 1 }, { unique: true });
 //PropietarioSchema.index({ username: 1 }, { unique: true });
 
