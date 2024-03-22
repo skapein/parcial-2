@@ -4,8 +4,8 @@ import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UsersModule } from './users/users.module';
-//import { PassengerModule } from './passenger/passenger.module';
-//import { VuelosModule } from './vuelos/vuelos.module';
+import { MascotaModule } from './mascotas/mascotas.module';
+import { PropietariosModule } from './propietarios/propietarios.module';
 //import { AuthModule } from './auth/auth.module';
 @Module({
   imports: [
@@ -13,10 +13,11 @@ import { UsersModule } from './users/users.module';
       envFilePath: '.env.development',
       isGlobal: true,
     }),
-    /*MongooseModule.forRoot(process.env.uri_mongo),
+    MongooseModule.forRoot(process.env.uri_mongo),
     UsersModule,
-    PassengerModule,
-    VuelosModule,
+    MascotaModule,
+    PropietariosModule
+    /*VuelosModule,
     AuthModule,*/
   ],
   controllers: [AppController],

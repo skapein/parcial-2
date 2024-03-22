@@ -1,0 +1,11 @@
+import { ApiProperty } from '@nestjs/swagger';
+import { IsNotEmpty, IsString } from 'class-validator';
+
+export class VeterinarioDTO {
+  @ApiProperty()
+  @IsNotEmpty({ message: 'El campo es obligatorio' })
+  @IsString()
+  readonly name: string;
+  //Veterinarios`: ID_Veterinario (PK), Nombre
+
+}
