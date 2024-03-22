@@ -13,7 +13,7 @@ import {
   @ApiTags('veterinario')
   @Controller('api/v1/mascota')
   export class VeterinarioController {
-    constructor(private readonly veterinarioService: VeterinariosService) {}
+    constructor(private readonly veterinarioService: VeterinarioService) {}
   
     @Post()
     insertar(@Body() veterinarioDTO: VeterinarioDTO) {
