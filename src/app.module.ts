@@ -1,17 +1,25 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UserModule } from './user/user.module';
+import { ConfigModule } from '@nestjs/config';
+import { MongooseModule } from '@nestjs/mongoose';
 import { UsersModule } from './users/users.module';
-import { UsesrController } from './usesr/usesr.controller';
-import { MascotasModule } from './mascotas/mascotas.module';
-import { PropietariosModule } from './propietarios/propietarios.module';
-import { VeterinariosModule } from './veterinarios/veterinarios.module';
-import { CitasModule } from './citas/citas.module';
-
+//import { PassengerModule } from './passenger/passenger.module';
+//import { VuelosModule } from './vuelos/vuelos.module';
+//import { AuthModule } from './auth/auth.module';
 @Module({
-  imports: [UserModule, UsersModule, MascotasModule, PropietariosModule, VeterinariosModule, CitasModule],
-  controllers: [AppController, UsesrController],
+  imports: [
+    ConfigModule.forRoot({
+      envFilePath: '.env.development',
+      isGlobal: true,
+    }),
+    /*MongooseModule.forRoot(process.env.uri_mongo),
+    UsersModule,
+    PassengerModule,
+    VuelosModule,
+    AuthModule,*/
+  ],
+  controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
