@@ -1,9 +1,21 @@
 import { Module } from '@nestjs/common';
-import { VeterinariosController } from './veterinarios.controller';
-import { VeterinariosService } from './veterinarios.service';
+import { VeterinarioController } from './veterinarios.controller';
+import { VeterinarioService } from './veterinarios.service';
+import { MongooseModule } from '@nestjs/mongoose';
+import { VETERINARIOS } from 'src/models/models';
+import { VeterinarioSchema } from './schema/veterinario.schema';
 
 @Module({
-  controllers: [VeterinariosController],
-  providers: [VeterinariosService]
+  imports: [
+    MongooseModule.forFeatureAsync([
+      {
+        name: VETERINARIOS.name,
+        useFactory: () => VeterinarioSchema,
+      },
+    ]),
+  ],
+  controllers: [VeterinarioController],
+  providers: [VeterinarioService],
+  exports: [VeterinarioService],
 })
-export class VeterinariosModule {}
+export class VeterinarioModule {}
