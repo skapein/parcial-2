@@ -5,7 +5,7 @@ import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UsersModule } from './users/users.module';
 import { MascotaModule } from './mascotas/mascotas.module';
-import { PropietariosModule } from './propietarios/propietarios.module';
+import { PropietarioModule } from './propietarios/propietarios.module';
 import { VeterinarioModule } from './veterinarios/veterinarios.module';
 //import { CitasModule } from './citas/cita.module';
 import { CitasModule } from './citas/citas.module';
@@ -20,7 +20,7 @@ import { AuthModule } from './auth/auth.module';
     MongooseModule.forRoot(process.env.uri_mongo),
     UsersModule,
     MascotaModule,
-    PropietariosModule,
+    PropietarioModule,
     VeterinarioModule,
     CitasModule,
     AuthModule,
