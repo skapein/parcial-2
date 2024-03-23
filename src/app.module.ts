@@ -6,7 +6,11 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { UsersModule } from './users/users.module';
 import { MascotaModule } from './mascotas/mascotas.module';
 import { PropietariosModule } from './propietarios/propietarios.module';
-//import { AuthModule } from './auth/auth.module';
+import { VeterinarioModule } from './veterinarios/veterinarios.module';
+//import { CitasModule } from './citas/cita.module';
+import { CitasModule } from './citas/citas.module';
+
+import { AuthModule } from './auth/auth.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -16,9 +20,10 @@ import { PropietariosModule } from './propietarios/propietarios.module';
     MongooseModule.forRoot(process.env.uri_mongo),
     UsersModule,
     MascotaModule,
-    PropietariosModule
-    /*VuelosModule,
-    AuthModule,*/
+    PropietariosModule,
+    VeterinarioModule,
+    CitasModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
